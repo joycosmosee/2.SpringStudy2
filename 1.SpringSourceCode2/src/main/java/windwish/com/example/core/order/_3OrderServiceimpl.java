@@ -2,6 +2,7 @@ package windwish.com.example.core.order;
 
 import windwish.com.example.core.discount._1DiscountPolicy;
 import windwish.com.example.core.discount._2FixDiscountPolicy;
+import windwish.com.example.core.discount._3RateDiscountPolicy;
 import windwish.com.example.core.member._2Member;
 import windwish.com.example.core.member._3MemberRepository;
 import windwish.com.example.core.member._4MemoryMemberRepository;
@@ -11,8 +12,12 @@ public class _3OrderServiceimpl implements _2OrderService {
 
     //회원찾기
     private final _3MemberRepository memberRepository = new _4MemoryMemberRepository();
-    //할인 정책
-    private final _1DiscountPolicy discountPolicy = new _2FixDiscountPolicy();
+    //할인 정책 : OCP 위반
+    //private final _1DiscountPolicy discountPolicy = new _2FixDiscountPolicy();
+    //% 할인으로 변경 : OCP 위반
+    //private final _1DiscountPolicy discountPolicy = new _3RateDiscountPolicy();
+    //위 OCP 위반 변경 -> 대신 : null position 발생
+    private _1DiscountPolicy discountPolicy;
 
     @Override
     public _1Order createOrder(Long memberId, String itemName, int itemPrice) {
