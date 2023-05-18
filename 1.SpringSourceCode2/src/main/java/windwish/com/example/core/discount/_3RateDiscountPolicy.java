@@ -15,6 +15,8 @@ public class _3RateDiscountPolicy implements _1DiscountPolicy{
             //10% 할인
             return price * discountPercent / 100;
         } else {
+            int a = price * discountPercent / 100;
+            System.out.println(a);
             return 0;
         }
     }

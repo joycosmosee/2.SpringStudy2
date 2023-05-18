@@ -1,7 +1,5 @@
 package windwish.com.example.core.member;
 
-import java.lang.reflect.Member;
-
 public interface _5MemberService {
 
     //회원 가입

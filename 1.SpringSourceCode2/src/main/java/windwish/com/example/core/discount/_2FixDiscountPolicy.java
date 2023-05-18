@@ -12,6 +12,8 @@ public class _2FixDiscountPolicy implements _1DiscountPolicy {
         //등급이 VIP일 경우
         //enum 타입은 ==임.
         if(member.getGrade() == _1Grade.VIP){
+            //int a = price * discountFixAmount / 100;
+            //System.out.println(a);
             return discountFixAmount;
         }else{
             return 0;
