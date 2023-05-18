@@ -10,7 +10,11 @@ import windwish.com.example.core.member._6MemberServiceImpl;
 public class _1MemberApp {
     public static void main(String[] args) {
 
-        _5MemberService memberService = new _6MemberServiceImpl();
+        //_3AppConfig를 이용해서 MemberService 개발하기 위해
+        _3AppConfig appConfig = new _3AppConfig();
+        //appConfig의 memberService를 꺼내야 함
+        _5MemberService memberService = appConfig.memberService();
+        //_5MemberService memberService = new _6MemberServiceImpl();
 
         //새로운 멤버 추가
         //1L : long타입이라 L붙임

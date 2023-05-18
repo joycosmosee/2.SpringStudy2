@@ -11,13 +11,23 @@ import windwish.com.example.core.member._4MemoryMemberRepository;
 public class _3OrderServiceimpl implements _2OrderService {
 
     //회원찾기
-    private final _3MemberRepository memberRepository = new _4MemoryMemberRepository();
+    //private final _3MemberRepository memberRepository = new _4MemoryMemberRepository();
+    //단일화 원칙에 의해
+    private final _3MemberRepository memberRepository;
     //할인 정책 : OCP 위반
     //private final _1DiscountPolicy discountPolicy = new _2FixDiscountPolicy();
     //% 할인으로 변경 : OCP 위반
     //private final _1DiscountPolicy discountPolicy = new _3RateDiscountPolicy();
     //위 OCP 위반 변경 -> 대신 : null position 발생
-    private _1DiscountPolicy discountPolicy;
+    //private _1DiscountPolicy discountPolicy;
+    //단일화 원칙에 의해
+    private final _1DiscountPolicy discountPolicy;
+
+    //생성자 만들기(생성자를 통해 값이 넘어가서 할당 됨)
+    public _3OrderServiceimpl(_3MemberRepository memberRepository, _1DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public _1Order createOrder(Long memberId, String itemName, int itemPrice) {

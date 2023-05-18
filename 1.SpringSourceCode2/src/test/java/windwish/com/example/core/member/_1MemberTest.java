@@ -1,12 +1,24 @@
 package windwish.com.example.core.member;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import windwish.com.example.core._3AppConfig;
 
 public class _1MemberTest {
 
     //memberService 인스턴스 만듦
-    _5MemberService memberService = new _6MemberServiceImpl();
+    //_5MemberService memberService = new _6MemberServiceImpl();
+    //아래 수정
+    _5MemberService memberService;
+
+    //@BeforeEach : 테스트 실행 전에 무조건 실행
+    @BeforeEach
+    public void beforeEach(){
+        _3AppConfig appConfig = new _3AppConfig();
+        //memberService를 위 memberService에 할당해줌
+        memberService = appConfig.memberService();
+    }
 
     //테스트 코드
     @Test

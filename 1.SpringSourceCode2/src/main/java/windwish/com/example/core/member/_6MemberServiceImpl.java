@@ -4,7 +4,13 @@ package windwish.com.example.core.member;
 public class _6MemberServiceImpl implements _5MemberService {
 
     //인터페이스 = new 클래스
-    private final _4MemoryMemberRepository memberRepository = new _4MemoryMemberRepository();
+    //private final _4MemoryMemberRepository memberRepository = new _4MemoryMemberRepository();
+    //단일화 원칙에 의해
+    private final _4MemoryMemberRepository memberRepository;
+    //생성자를 만듦
+    public _6MemberServiceImpl(_4MemoryMemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     //회원 가입
     @Override

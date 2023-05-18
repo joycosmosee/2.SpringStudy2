@@ -11,10 +11,16 @@ import windwish.com.example.core.order._3OrderServiceimpl;
 public class _2OrderApp {
 
     public static void main(String[] args) {
+
+        //_3AppConfig를 이용해서 MemberService 개발하기 위해
+        _3AppConfig appConfig = new _3AppConfig();
+        //appConfig의 memberService를 꺼내야 함
+        _5MemberService memberService = appConfig.memberService();
+        _2OrderService orderService = appConfig.orderService();
         //memberService
-        _5MemberService memberService = new _6MemberServiceImpl();
+        //_5MemberService memberService = new _6MemberServiceImpl(null);
         //orderService
-        _2OrderService orderService = new _3OrderServiceimpl();
+        //_2OrderService orderService = new _3OrderServiceimpl(null, null);
 
         //member 추가
         Long memberId = 1L;
