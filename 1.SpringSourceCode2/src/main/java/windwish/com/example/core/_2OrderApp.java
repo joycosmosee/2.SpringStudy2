@@ -5,10 +5,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import windwish.com.example.core.member._1Grade;
 import windwish.com.example.core.member._2Member;
 import windwish.com.example.core.member._5MemberService;
-import windwish.com.example.core.member._6MemberServiceImpl;
 import windwish.com.example.core.order._1Order;
 import windwish.com.example.core.order._2OrderService;
-import windwish.com.example.core.order._3OrderServiceimpl;
 
 public class _2OrderApp {
 
@@ -17,7 +15,7 @@ public class _2OrderApp {
         //memberService
         //_5MemberService memberService = new _6MemberServiceImpl(null);
         //orderService
-        //_2OrderService orderService = new _3OrderServiceimpl(null, null);
+        //_2OrderService orderService = new _3OrderServiceImpl(null, null);
         //아래 내용
         //_3AppConfig를 이용해서 MemberService 개발하기 위해
         //_3AppConfig appConfig = new _3AppConfig();

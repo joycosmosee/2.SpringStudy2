@@ -1,8 +1,10 @@
 package windwish.com.example.core.discount;
 
+import org.springframework.stereotype.Component;
 import windwish.com.example.core.member._1Grade;
 import windwish.com.example.core.member._2Member;
 
+@Component
 public class _3RateDiscountPolicy implements _1DiscountPolicy{
 
     //discountpercent를 10%로만 하겠음

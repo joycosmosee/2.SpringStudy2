@@ -1,8 +1,11 @@
 package windwish.com.example.core.member;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 //interface의 구현체
 //상속 : alt + enter : override
 public class _4MemoryMemberRepository implements _3MemberRepository {

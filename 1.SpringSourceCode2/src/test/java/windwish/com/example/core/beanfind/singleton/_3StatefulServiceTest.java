@@ -1,12 +1,9 @@
-package windwish.com.example.core.singleton;
+package windwish.com.example.core.beanfind.singleton;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class _3StatefulServiceTest {
 

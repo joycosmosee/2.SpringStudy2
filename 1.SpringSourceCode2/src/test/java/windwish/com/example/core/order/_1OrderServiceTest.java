@@ -12,7 +12,7 @@ import windwish.com.example.core.member._6MemberServiceImpl;
 public class _1OrderServiceTest {
 
     //_5MemberService memberService = new _6MemberServiceImpl();
-    //_2OrderService orderService = new _3OrderServiceimpl();
+    //_2OrderService orderService = new _3OrderServiceImpl();
     //아래 수정
     _5MemberService memberService;
     _2OrderService orderService;

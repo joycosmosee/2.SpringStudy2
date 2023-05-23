@@ -3,13 +3,24 @@ package windwish.com.example.core;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import windwish.com.example.core.discount._1DiscountPolicy;
-import windwish.com.example.core.discount._2FixDiscountPolicy;
 import windwish.com.example.core.discount._3RateDiscountPolicy;
 import windwish.com.example.core.member._4MemoryMemberRepository;
 import windwish.com.example.core.member._5MemberService;
 import windwish.com.example.core.member._6MemberServiceImpl;
 import windwish.com.example.core.order._2OrderService;
-import windwish.com.example.core.order._3OrderServiceimpl;
+import windwish.com.example.core.order._3OrderServiceImpl;
+
+//예상 결과
+//call AppConfig.memberService
+//call AppConfig.memberRepository
+//call AppConfig.memberRepository
+//call AppConfig.orderService
+//call AppConfig.memberRepository
+
+//실제 결과 -> 싱글톤 컨테이너는 자바라도 싱글톤으로 만든다.
+//call AppConfig.memberService
+//call AppConfig.memberRepository
+//call AppConfig.orderService
 
 //스프링 설정 정보 : @Configuration
 @Configuration
@@ -24,6 +35,7 @@ public class _3AppConfig {
     //memberserice 역할
     @Bean
    public _5MemberService memberService(){
+        //System.out.println("call _3AppConfig.memberService");
         //나는 _6MemberServiceImpl인데, _4MemoryMemberRepository를 쓸 거야
         return new _6MemberServiceImpl(memberRepository());
     }
@@ -31,6 +43,7 @@ public class _3AppConfig {
     //memberRepository 역할
     @Bean
     public _4MemoryMemberRepository memberRepository() {
+        //System.out.println("call _3AppConfig.memberRepository");
         return new _4MemoryMemberRepository();
     }
 
@@ -38,7 +51,8 @@ public class _3AppConfig {
     //_3OrderServiceimple
     @Bean
     public _2OrderService orderService(){
-        return new _3OrderServiceimpl(memberRepository(), discountPolicy());
+        //System.out.println("call _3AppConfig.orderService");
+        return new _3OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     //DiscountPolicy 역할

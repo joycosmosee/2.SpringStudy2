@@ -1,5 +1,9 @@
 package windwish.com.example.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 //_5MemberService의 구현체
 public class _6MemberServiceImpl implements _5MemberService {
 
@@ -7,6 +11,8 @@ public class _6MemberServiceImpl implements _5MemberService {
     //private final _4MemoryMemberRepository memberRepository = new _4MemoryMemberRepository();
     //단일화 원칙에 의해
     private final _4MemoryMemberRepository memberRepository;
+
+    @Autowired
     //생성자를 만듦
     public _6MemberServiceImpl(_4MemoryMemberRepository memberRepository) {
         this.memberRepository = memberRepository;
@@ -23,5 +29,10 @@ public class _6MemberServiceImpl implements _5MemberService {
     @Override
     public _2Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
+    }
+
+    //테스트 코드
+    public _4MemoryMemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }

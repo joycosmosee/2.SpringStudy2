@@ -1,4 +1,4 @@
-package windwish.com.example.core.singleton;
+package windwish.com.example.core.beanfind.singleton;
 
 public class _3StatefulService {
 

@@ -7,7 +7,7 @@
     <!--</bean>-->
     <!--<bean id="memberRepository"-->
           <!--class="windwish.com.example.core.member._4MemoryMemberRepository" />-->
-    <!--<bean id="orderService" class="windwish.com.example.core.order._3OrderServiceimpl">-->
+    <!--<bean id="orderService" class="windwish.com.example.core.order._3OrderServiceImpl">-->
         <!--<constructor-arg name="memberRepository" ref="memberRepository" />-->
         <!--<constructor-arg name="discountPolicy" ref="discountPolicy" />-->
     <!--</bean>-->

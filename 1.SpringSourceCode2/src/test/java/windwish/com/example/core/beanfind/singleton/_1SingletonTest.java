@@ -1,4 +1,4 @@
-package windwish.com.example.core.singleton;
+package windwish.com.example.core.beanfind.singleton;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
