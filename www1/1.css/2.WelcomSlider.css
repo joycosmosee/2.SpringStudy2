@@ -1,0 +1,65 @@
+.team2{
+    display:none;
+}
+.team1{
+    display:none;
+}
+@media(max-width:400px){
+    .team{
+        /* display:none; */
+    }
+    .team1{
+        /* display:block; */
+    }
+    .team2{
+        /* display:block; */
+    }
+}
+
+.section1_1{
+    display:none;
+}
+@media(max-width:400px){
+    .section1{
+        /* display:none; */
+    }
+    .section1_1{
+        /* display:block; */
+    }
+}
+
+.section3_1{
+    display:none;
+}
+@media(max-width:400px){
+    .section3{
+        display:none;
+    }
+    .section3_1{
+        display:block;
+    }
+}
+
+.section4_1{
+    display:none;
+}
+@media(max-width:400px){
+    .section4{
+        display:none;
+    }
+    .section4_1{
+        display:block;
+    }
+}
+
+.seal_2{
+    display:none;
+}
+@media(max-width:400px){
+    .seal_1{
+        /* display:none; */
+    }
+    .seal_2{
+        /* display:block; */
+    }
+}

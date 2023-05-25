@@ -1,10 +1,15 @@
 package windwish.com.example.core.discount;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import windwish.com.example.core.annotation._1MainDiscountPolicy;
 import windwish.com.example.core.member._1Grade;
 import windwish.com.example.core.member._2Member;
 
+
 @Component
+//@Qualifier("mainDiscountPolicy")
+@_1MainDiscountPolicy
 public class _3RateDiscountPolicy implements _1DiscountPolicy{
 
     //discountpercent를 10%로만 하겠음

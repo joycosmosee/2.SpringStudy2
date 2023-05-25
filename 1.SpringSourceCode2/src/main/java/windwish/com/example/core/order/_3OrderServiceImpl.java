@@ -1,7 +1,9 @@
 package windwish.com.example.core.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import windwish.com.example.core.annotation._1MainDiscountPolicy;
 import windwish.com.example.core.discount._1DiscountPolicy;
 import windwish.com.example.core.discount._2FixDiscountPolicy;
 import windwish.com.example.core.discount._3RateDiscountPolicy;
@@ -32,13 +34,19 @@ public class _3OrderServiceImpl implements _2OrderService {
     //생성자 만들기(생성자를 통해 값이 넘어가서 할당 됨)
     //생성자 통해 1번 호출
     @Autowired
-    public _3OrderServiceImpl(_3MemberRepository memberRepository, _1DiscountPolicy discountPolicy) {
+    //public _3OrderServiceImpl(_3MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") _1DiscountPolicy discountPolicy) {
+    public _3OrderServiceImpl(_3MemberRepository memberRepository, @_1MainDiscountPolicy _1DiscountPolicy discountPolicy) {
         //System.out.println("memberRepository = " + memberRepository);
         //System.out.println("discountPolicy = " + discountPolicy);
         //System.out.println("1. OrderServiceImpl.OrderServiceImpl");
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
+//    @Autowired
+//    public _3OrderServiceImpl(_3MemberRepository memberRepository, _1DiscountPolicy rateDiscountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = rateDiscountPolicy;
+//    }
 
     //수정자 주입
 //    @Autowired
